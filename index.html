@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlay VDO</title>
+    <style>
+        /* --- DÉCLARATION DE LA POLICE Avenir Next Cyr Heavy --- */
+        @font-face {
+            font-family: 'Avenir Next Cyr Heavy'; /* Nom que vous utiliserez dans votre CSS */
+            src: url('fonts/AvenirNextCyr-Heavy.woff2') format('woff2'),
+                 url('fonts/AvenirNextCyr-Heavy.woff') format('woff');
+            font-weight: 700; /* La "graisse" de la police. "Heavy" est souvent 700, 800 ou 900 */
+            font-style: normal;
+            font-display: swap; /* Permet un affichage rapide du texte avec une police par défaut */
+        }
+        /* ----------------------------------------------------- */
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            /* Applique la nouvelle police à tout le corps du document */
+            font-family: 'Avenir Next Cyr Heavy', Arial, sans-serif;
+        }
+
+        .cam-container {
+            position: absolute;
+            width: 220px;
+            height: 125px;
+            border: 5px solid #380e15;
+            border-radius: 0px;
+            overflow: hidden;
+        }
+
+        .name {
+            position: absolute;
+            bottom: -25px;
+            left: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 10px;
+            
+            /* La police 'Avenir Next Cyr Heavy' est héritée de 'body' */
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Positionnement des conteneurs de caméra */
+        #player1 { top: 150px; left: 400px; }
+        #player2 { top: 300px; left: 400px; }
+        #player3 { top: 450px; left: 400px; }
+        #player4 { top: 600px; left: 400px; }
+        #player5 { top: 750px; left: 400px; }
+
+        /* --- STYLES ET POSITIONNEMENT DES NOMS INDÉPENDANTS EXISTANTS --- */
+        .independent-name {
+            position: absolute;
+            color: white;
+            font-family: 'Avenir Next Cyr Heavy', sans-serif;
+            font-size: 30px; /* Taille pour les 5 noms existants */
+            font-weight: bold;
+            z-index: 10;
+            white-space: nowrap;
+        }
+
+        /* Positionnement de chaque nom indépendant existant */
+        #independent-name1 {
+            top: 556px;
+            left: 200px;
+        }
+
+        #independent-name2 {
+            top: 556px;
+            right: 200px;
+        }
+
+        #independent-name3 {
+            top: 916px;
+            left: 200px;
+        }
+
+        #independent-name4 {
+            top: 916px;
+            right: 200px;
+        }
+
+        #independent-name5 {
+            top: 916px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        /* ------------------------------------------------------------- */
+
+        /* --- NOUVEAU STYLE POUR LE TEXTE SUPPLÉMENTAIRE --- */
+        .independent-text-style {
+            position: absolute;
+            color: white; /* Une couleur différente pour le distinguer (or) */
+            font-family: 'Avenir Next Cyr Heavy', sans-serif;
+            font-size: 60px; /* Une taille de police significativement différente */
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            z-index: 10;
+            white-space: nowrap;
+        }
+
+        /* Positionnement du nouveau texte */
+        #special-text {
+            top: 120px; /* Exemple de positionnement: près du haut, centré */
+            left: 120px;
+        
+        }
+        /* --------------------------------------------------- */
+
+    </style>
+</head>
+<body>
+
+    <div id="background"></div>
+
+    <div class="cam-container" id="player1">
+        <iframe src="https://vdo.ninja/?view=XIOTO&cleanoutput&transparent"></iframe>
+        <div class="name">lyyve</div>
+    </div>
+
+    <div class="cam-container" id="player2">
+        <iframe src="https://vdo.ninja/?view=P2&cleanoutput&transparent"></iframe>
+        <div class="name">Joueur 2</div>
+    </div>
+
+    <div class="cam-container" id="player3">
+        <iframe src="https://vdo.ninja/?view=joueur3&cleanoutput&transparent"></iframe>
+        <div class="name">Joueur 3</div>
+    </div>
+
+    <div class="cam-container" id="player4">
+        <iframe src="https://vdo.ninja/?view=joueur4&cleanoutput&transparent"></iframe>
+        <div class="name">Joueur 4</div>
+    </div>
+
+    <div class="cam-container" id="player5">
+        <iframe src="https://vdo.ninja/?view=joueur5&cleanoutput&transparent"></iframe>
+        <div class="name">Joueur 5</div>
+    </div>
+
+    
+    </body>
+</html>
